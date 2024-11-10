@@ -1,9 +1,9 @@
 # 1) IMPORTS
 import pyspark
+from pyspark.sql import functions as F
 import requests
 import json
 import math
-import pandas as pd
 
 # 2) REQUEST
 
@@ -14,7 +14,7 @@ response = requests.request("GET", url = url)
 
 num_brew = int(response.json()['total'])
 
-# 2.2) 
+# 2.2) Getting data
 
 num_req = math.ceil((num_brew/200))
 
@@ -27,4 +27,9 @@ for i in range(0, num_req + 1):
 
     list_brew.extend(response.json())
 
-pd.DataFrame(list_brew)
+# 2.3) Writing data in Bronze zone
+
+with open("/Users/nelso/Desktop/CaseDE/datalake/bronze/raw.json", "w") as outfile:
+    json.dump(list_brew, outfile)
+
+df_bl = spark.read.json("/Users/nelso/Desktop/CaseDE/datalake/bronze/raw.json")
