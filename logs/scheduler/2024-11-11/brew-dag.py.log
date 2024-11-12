@@ -1,0 +1,192 @@
+[2024-11-11T23:48:49.658+0000] {processor.py:186} INFO - Started process (PID=684) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:48:49.660+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:48:49.663+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:48:49.663+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:48:49.801+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:48:49.793+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/brew-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/brew-dag.py", line 25, in <module>
+    with DAG('brew-dag', start_date = datetime(2024,11,11), schedule_interval='30 * * * *', catchup=False) as dag:
+                                      ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'datetime.datetime(...)'?
+[2024-11-11T23:48:49.803+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:48:49.879+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.232 seconds
+[2024-11-11T23:49:20.392+0000] {processor.py:186} INFO - Started process (PID=748) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:20.394+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:49:20.398+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:20.398+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:20.438+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:20.432+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/brew-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/brew-dag.py", line 25, in <module>
+    with DAG('brew-dag', start_date = datetime(2024,11,11), schedule_interval='30 * * * *', catchup=False) as dag:
+                                      ^^^^^^^^^^^^^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'datetime.datetime(...)'?
+[2024-11-11T23:49:20.440+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:20.483+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.101 seconds
+[2024-11-11T23:49:34.281+0000] {processor.py:186} INFO - Started process (PID=758) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:34.282+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:49:34.287+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.285+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:34.344+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:49:34.472+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.471+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:brew-dag
+[2024-11-11T23:49:34.485+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.484+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:brew-dag
+[2024-11-11T23:49:34.494+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.494+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:brew-dag
+[2024-11-11T23:49:34.506+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.505+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:brew-dag
+[2024-11-11T23:49:34.518+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.518+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:brew-dag
+[2024-11-11T23:49:34.528+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.528+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:brew-dag
+[2024-11-11T23:49:34.536+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.536+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:brew-dag
+[2024-11-11T23:49:34.537+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.537+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:49:34.549+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.549+0000] {dag.py:3262} INFO - Creating ORM DAG for brew-dag
+[2024-11-11T23:49:34.560+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:49:34.560+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:49:34.581+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.306 seconds
+[2024-11-11T23:50:05.516+0000] {processor.py:186} INFO - Started process (PID=828) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:05.517+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:50:05.520+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:05.519+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:05.553+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:05.573+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:05.573+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:50:05.601+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:05.601+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:50:05.628+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.119 seconds
+[2024-11-11T23:50:36.016+0000] {processor.py:186} INFO - Started process (PID=892) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:36.017+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:50:36.021+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:36.020+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:36.052+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:50:36.072+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:36.072+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:50:36.093+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:50:36.093+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:50:36.122+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.114 seconds
+[2024-11-11T23:51:06.348+0000] {processor.py:186} INFO - Started process (PID=956) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:06.350+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:51:06.355+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:06.354+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:06.404+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:06.426+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:06.426+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:51:06.461+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:06.461+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:51:06.496+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.156 seconds
+[2024-11-11T23:51:36.647+0000] {processor.py:186} INFO - Started process (PID=1020) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:36.648+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:51:36.651+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:36.651+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:36.692+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:51:36.713+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:36.713+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:51:36.737+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:51:36.737+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:51:36.758+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.119 seconds
+[2024-11-11T23:52:07.035+0000] {processor.py:186} INFO - Started process (PID=1084) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:07.037+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:52:07.040+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:07.039+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:07.074+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:07.101+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:07.101+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:52:07.130+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:07.130+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:52:07.167+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.139 seconds
+[2024-11-11T23:52:37.335+0000] {processor.py:186} INFO - Started process (PID=1148) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:37.336+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:52:37.339+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:37.339+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:37.370+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:52:37.390+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:37.390+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:52:37.411+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:52:37.411+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:52:37.446+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.117 seconds
+[2024-11-11T23:53:07.625+0000] {processor.py:186} INFO - Started process (PID=1212) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:07.640+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:53:07.657+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:07.655+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:07.753+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:07.785+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:07.784+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:53:07.817+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:07.817+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:53:07.850+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.245 seconds
+[2024-11-11T23:53:11.005+0000] {processor.py:186} INFO - Started process (PID=1217) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:11.006+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:53:11.009+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:11.008+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:11.056+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:11.185+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:11.184+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:53:11.207+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:11.207+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 22:30:00+00:00, run_after=2024-11-11 23:30:00+00:00
+[2024-11-11T23:53:11.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.244 seconds
+[2024-11-11T23:53:41.618+0000] {processor.py:186} INFO - Started process (PID=1283) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:41.721+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:53:41.859+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:41.853+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:42.115+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:53:42.136+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:42.135+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:53:42.224+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:53:42.224+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:53:42.251+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.860 seconds
+[2024-11-11T23:54:12.992+0000] {processor.py:186} INFO - Started process (PID=1347) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:12.993+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:54:12.996+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:12.996+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:13.046+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:13.074+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:13.074+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:54:13.112+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:13.111+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:54:13.179+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.198 seconds
+[2024-11-11T23:54:43.477+0000] {processor.py:186} INFO - Started process (PID=1411) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:43.478+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:54:43.480+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:43.480+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:43.514+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:54:43.535+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:43.534+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:54:43.564+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:54:43.564+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:54:43.600+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.129 seconds
+[2024-11-11T23:55:13.668+0000] {processor.py:186} INFO - Started process (PID=1476) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:13.671+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:55:13.675+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:13.675+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:13.720+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:13.743+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:13.743+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:55:13.776+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:13.776+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:55:13.801+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.139 seconds
+[2024-11-11T23:55:44.271+0000] {processor.py:186} INFO - Started process (PID=1539) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:44.272+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:55:44.276+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:44.276+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:44.306+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:55:44.327+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:44.327+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:55:44.351+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:55:44.350+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:55:44.377+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.111 seconds
+[2024-11-11T23:56:14.743+0000] {processor.py:186} INFO - Started process (PID=1603) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:14.745+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:56:14.749+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:14.748+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:14.790+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:14.811+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:14.811+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:56:14.841+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:14.841+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:56:14.870+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.136 seconds
+[2024-11-11T23:56:45.006+0000] {processor.py:186} INFO - Started process (PID=1667) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:45.008+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:56:45.011+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:45.011+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:45.046+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:56:45.070+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:45.069+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:56:45.098+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:56:45.097+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:56:45.128+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.128 seconds
+[2024-11-11T23:57:15.572+0000] {processor.py:186} INFO - Started process (PID=1731) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:15.573+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:57:15.576+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:15.575+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:15.613+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:15.634+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:15.634+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:57:15.664+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:15.664+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:57:15.694+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.130 seconds
+[2024-11-11T23:57:45.848+0000] {processor.py:186} INFO - Started process (PID=1795) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:45.849+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:57:45.852+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:45.852+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:45.892+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:57:45.938+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:45.938+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:57:45.980+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:57:45.980+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:57:46.020+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.181 seconds
+[2024-11-11T23:58:16.310+0000] {processor.py:186} INFO - Started process (PID=1859) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:16.311+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:58:16.314+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:16.313+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:16.363+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:16.384+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:16.384+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:58:16.416+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:16.416+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:58:16.445+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.142 seconds
+[2024-11-11T23:58:43.734+0000] {processor.py:186} INFO - Started process (PID=1916) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:43.737+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:58:43.740+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:43.740+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:43.786+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:58:43.807+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:43.807+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:58:43.833+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:58:43.833+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:58:43.878+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.152 seconds
+[2024-11-11T23:59:15.257+0000] {processor.py:186} INFO - Started process (PID=1980) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:15.258+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:59:15.266+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:15.265+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:15.348+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:15.425+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:15.425+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:59:15.720+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:15.719+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:59:15.777+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.526 seconds
+[2024-11-11T23:59:45.935+0000] {processor.py:186} INFO - Started process (PID=2042) to work on /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:45.936+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/brew-dag.py for tasks to queue
+[2024-11-11T23:59:45.939+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:45.939+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:45.975+0000] {processor.py:925} INFO - DAG(s) 'brew-dag' retrieved from /opt/airflow/dags/brew-dag.py
+[2024-11-11T23:59:46.005+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:46.005+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-11T23:59:46.042+0000] {logging_mixin.py:190} INFO - [2024-11-11T23:59:46.041+0000] {dag.py:4180} INFO - Setting next_dagrun for brew-dag to 2024-11-11 23:30:00+00:00, run_after=2024-11-12 00:30:00+00:00
+[2024-11-11T23:59:46.067+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/brew-dag.py took 0.138 seconds
