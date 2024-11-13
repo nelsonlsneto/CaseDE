@@ -22,6 +22,7 @@ def failure_email(context):
     to_email = 'nelsonlsn@gmail.com'
     send_email(to = to_email, subject = subject, html_content = body)
 
+
 # Function to test de connection to API
 def connect_api():
     url = 'https://api.openbrewerydb.org/v1/breweries/meta'
@@ -35,7 +36,8 @@ def e_valido(ti):
         return 'valido'
     return 'nvalido'
 
-# Function to copy the data from API to bronze layer
+
+# Function to request data from API
 def copy_from_api():
     url = 'https://api.openbrewerydb.org/v1/breweries/meta'
     response = requests.request("GET", url = url)
@@ -48,24 +50,50 @@ def copy_from_api():
         list_brew.extend(response.json())
     return list_brew
 
+
+# Function Data Quality number of rows from API
+def data_quality_num_rows(ti):
+    list_brew = ti.xcom_pull(task_ids = 'copy_from_api')
+    num_rows = len(list_brew)
+    if num_rows >= 8000:
+        return 'quality_ok'
+    return 'quality_nok'
+
+
+# Function to copy data from API to bronze layer
 def api_bronze(ti):
     list_brew = ti.xcom_pull(task_ids = 'copy_from_api')
     with open("/opt/airflow/datalake/bronze/raw.json", "w") as outfile:
         json.dump(list_brew, outfile)
 
-# Function to copy the data from bronze layer to silver layer
+
+# Function to copy data from bronze layer to silver layer
 def bronze_silver():
     df_bl = pd.read_json("/opt/airflow/datalake/bronze/raw.json")
     df_bl = df_bl.drop_duplicates()
     df_bl.to_parquet("/opt/airflow/datalake/silver/breweries", partition_cols = 'country', index = False, existing_data_behavior='delete_matching')
 
+
+# Function to copy data from silver layer to gold layer
+def silver_gold():
+    df_sl = pd.read_parquet('/opt/airflow/datalake/silver/breweries', engine='pyarrow')
+    df_sl = pd.DataFrame(df_sl)
+    df_gl = df_sl.groupby(['country', 'brewery_type'])['id'].agg('count').reset_index()
+    df_gl = df_gl.rename(columns={'id': 'qty_breweries'})
+    df_gl.to_parquet("/opt/airflow/datalake/gold/breweries/breweries.parquet", index = False)
+
+
+
 default_arguments = {
     "execution_timeout": datetime.timedelta(minutes=30),
     "retry_delay": datetime.timedelta(minutes=1),
     'email_on_failure': True,
+    'email_on_retry': False,
     'email': 'nelsonlsn@gmail.com',
     "retries": 1
 }
+
+
 
 with DAG('brew-dag', default_args=default_arguments, start_date = datetime.datetime(2024,11,11), schedule_interval='0 7 * * *', catchup=False) as dag:
 
@@ -99,6 +127,24 @@ with DAG('brew-dag', default_args=default_arguments, start_date = datetime.datet
         on_failure_callback = failure_email
     )
 
+    data_quality_num_rows = BranchPythonOperator(
+        task_id = 'data_quality_num_rows',
+        python_callable = data_quality_num_rows,
+        on_failure_callback = failure_email
+    )
+
+    quality_ok = BashOperator(
+        task_id = 'quality_ok',
+        bash_command = "echo 'Number of rows ok'",
+        on_failure_callback = lambda context: failure_email(context)
+    )
+
+    quality_nok = BashOperator(
+        task_id = 'quality_nok',
+        bash_command = "echo 'Number of rows not ok'",
+        on_failure_callback = lambda context: failure_email(context)
+    )
+
     api_bronze = PythonOperator(
         task_id = 'api_bronze',
         python_callable = api_bronze,
@@ -111,6 +157,13 @@ with DAG('brew-dag', default_args=default_arguments, start_date = datetime.datet
         on_failure_callback = failure_email
     )
 
+    silver_gold = PythonOperator(
+        task_id = 'silver_gold',
+        python_callable = silver_gold,
+        on_failure_callback = failure_email
+    )
+
     # Define tasks dependencies
     connect_api >> e_valido >> [valido, nvalido]
-    valido >> copy_from_api >> api_bronze >> bronze_silver
+    valido >> copy_from_api >> data_quality_num_rows >> [quality_ok, quality_nok]
+    quality_ok >> api_bronze >> bronze_silver >> silver_gold
