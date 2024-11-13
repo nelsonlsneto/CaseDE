@@ -61,14 +61,15 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+    # Email settings (gmail):
     AIRFLOW__EMAIL__EMAIL_BACKEND: airflow.utils.email.send_email_smtp
     AIRFLOW__SMTP__SMTP_HOST: smtp.gmail.com
     AIRFLOW__SMTP__START_TLS: False
     AIRFLOW__SMTP__SMTP_SSL: False
-    AIRFLOW__SMTP__SMTP_USER: nelsonlsn@gmail.com
-    AIRFLOW__SMTP__SMTP_PASSWORD: obai fyzx dpou cxtu
+    AIRFLOW__SMTP__SMTP_USER: youremail@gmail.com
+    AIRFLOW__SMTP__SMTP_PASSWORD: yourpassword
     AIRFLOW__SMTP__SMTP_PORT: 587
-    AIRFLOW__SMTP__SMTP_MAIL_FROM: nelsonlsn@gmail.com
+    AIRFLOW__SMTP__SMTP_MAIL_FROM: youremail@gmail.com
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
