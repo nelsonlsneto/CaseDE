@@ -20,12 +20,19 @@ Before we begin, you have to install the following applications on your PC:
 
 ## 2) Clone this repository on your PC
 
-Edit the docker-compose.yaml file with your e-mail credentials:
+### 2.1) Make sure all these folders exist:
+- config
+- dags
+- datalake
+- logs
+- plugins
+
+### 2.2) Edit the docker-compose.yaml file with your e-mail credentials:
 - Open the docker-compose.yaml file;
 - Edit this file with your e-mail credentials. In my case I used Gmail. If you use 2FA, you can create an app password. To do so, you can follow these steps in this [link](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237)
 ![email](https://github.com/user-attachments/assets/be27b89f-0ff0-45fb-833d-447510f07e98)
 
-After you have edited the docker-compose.yaml file, you have to set Docker up:
+### 2.3) After you have edited the docker-compose.yaml file, you have to set Docker up:
 - Open Docker;
 - Open CMD (Windows);
 - Access the folder where this repository was cloned;
@@ -33,7 +40,7 @@ After you have edited the docker-compose.yaml file, you have to set Docker up:
 - Wait until the environment is set;
 - Enter this code on CMD: docker-compose up
 
-After you have done these instructions, you will be able to access Airflow:
+### 2.4) After you have done these instructions, you will be able to access Airflow:
 - Open your browser and open [Airflow](http://localhost:8080/)
 - Username: Airflow
 - Password: Airflow
@@ -46,4 +53,5 @@ You can now open the DAG called "brew-dag" and run it by clicking in this yellow
 ## 4) Shutting down Docker
 
 After you have done evertything, you can shut docker down by entering this code on CMD:
-docker-compose down
+- Access the folder where this repository was cloned;
+- Enter this code on CMD: docker-compose down
