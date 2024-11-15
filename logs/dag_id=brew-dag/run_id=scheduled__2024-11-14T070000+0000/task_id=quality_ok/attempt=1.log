@@ -1,0 +1,32 @@
+[2024-11-15T19:14:42.814+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-15T19:14:42.835+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brew-dag.quality_ok scheduled__2024-11-14T07:00:00+00:00 [queued]>
+[2024-11-15T19:14:42.848+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brew-dag.quality_ok scheduled__2024-11-14T07:00:00+00:00 [queued]>
+[2024-11-15T19:14:42.849+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-11-15T19:14:42.869+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): quality_ok> on 2024-11-14 07:00:00+00:00
+[2024-11-15T19:14:42.883+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=117) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-15T19:14:42.885+0000] {standard_task_runner.py:72} INFO - Started process 119 to run task
+[2024-11-15T19:14:42.884+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brew-dag', 'quality_ok', 'scheduled__2024-11-14T07:00:00+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/brew-dag.py', '--cfg-path', '/tmp/tmpmu6s6zq4']
+[2024-11-15T19:14:42.886+0000] {standard_task_runner.py:105} INFO - Job 120: Subtask quality_ok
+[2024-11-15T19:14:42.955+0000] {task_command.py:467} INFO - Running <TaskInstance: brew-dag.quality_ok scheduled__2024-11-14T07:00:00+00:00 [running]> on host 4922c02ec363
+[2024-11-15T19:14:43.056+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='brew-dag' AIRFLOW_CTX_TASK_ID='quality_ok' AIRFLOW_CTX_EXECUTION_DATE='2024-11-14T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-14T07:00:00+00:00'
+[2024-11-15T19:14:43.058+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-15T19:14:43.059+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-15T19:14:43.059+0000] {logging_mixin.py:190} INFO - Current task name:quality_ok state:running start_date:2024-11-15 19:14:42.836857+00:00
+[2024-11-15T19:14:43.061+0000] {logging_mixin.py:190} INFO - Dag name:brew-dag and current dag run status:running
+[2024-11-15T19:14:43.062+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-15T19:14:43.063+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2024-11-15T19:14:43.065+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', "echo 'Number of rows ok'"]
+[2024-11-15T19:14:43.083+0000] {subprocess.py:99} INFO - Output:
+[2024-11-15T19:14:43.084+0000] {subprocess.py:106} INFO - Number of rows ok
+[2024-11-15T19:14:43.085+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2024-11-15T19:14:43.116+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-15T19:14:43.117+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=brew-dag, task_id=quality_ok, run_id=scheduled__2024-11-14T07:00:00+00:00, execution_date=20241114T070000, start_date=20241115T191442, end_date=20241115T191443
+[2024-11-15T19:14:43.131+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-15T19:14:43.132+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-15T19:14:43.132+0000] {logging_mixin.py:190} INFO - Dag name:brew-dag queued_at:2024-11-15 18:35:35.263489+00:00
+[2024-11-15T19:14:43.133+0000] {logging_mixin.py:190} INFO - Task hostname:4922c02ec363 operator:BashOperator
+[2024-11-15T19:14:43.182+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-15T19:14:43.215+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-15T19:14:43.220+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
