@@ -1,0 +1,29 @@
+[2024-11-15T18:18:42.216+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-15T18:18:42.248+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: brew-dag.nvalido scheduled__2024-11-14T07:00:00+00:00 [queued]>
+[2024-11-15T18:18:42.264+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: brew-dag.nvalido scheduled__2024-11-14T07:00:00+00:00 [queued]>
+[2024-11-15T18:18:42.266+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 3
+[2024-11-15T18:18:42.287+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): nvalido> on 2024-11-14 07:00:00+00:00
+[2024-11-15T18:18:42.300+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=344) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-15T18:18:42.302+0000] {standard_task_runner.py:72} INFO - Started process 346 to run task
+[2024-11-15T18:18:42.302+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'brew-dag', 'nvalido', 'scheduled__2024-11-14T07:00:00+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/brew-dag.py', '--cfg-path', '/tmp/tmp2olc8hsx']
+[2024-11-15T18:18:42.303+0000] {standard_task_runner.py:105} INFO - Job 101: Subtask nvalido
+[2024-11-15T18:18:42.364+0000] {task_command.py:467} INFO - Running <TaskInstance: brew-dag.nvalido scheduled__2024-11-14T07:00:00+00:00 [running]> on host 73e505f999af
+[2024-11-15T18:18:42.474+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='nelsonlsn@outlook.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='brew-dag' AIRFLOW_CTX_TASK_ID='nvalido' AIRFLOW_CTX_EXECUTION_DATE='2024-11-14T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-14T07:00:00+00:00'
+[2024-11-15T18:18:42.477+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-15T18:18:42.478+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-15T18:18:42.478+0000] {logging_mixin.py:190} INFO - Current task name:nvalido state:running start_date:2024-11-15 18:18:42.249070+00:00
+[2024-11-15T18:18:42.479+0000] {logging_mixin.py:190} INFO - Dag name:brew-dag and current dag run status:running
+[2024-11-15T18:18:42.480+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-15T18:18:42.491+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2024-11-15T18:18:42.493+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', "echo 'API not valid'; exit 99;"]
+[2024-11-15T18:18:42.514+0000] {subprocess.py:99} INFO - Output:
+[2024-11-15T18:18:42.541+0000] {subprocess.py:106} INFO - API not valid
+[2024-11-15T18:18:42.542+0000] {subprocess.py:110} INFO - Command exited with return code 99
+[2024-11-15T18:18:42.543+0000] {taskinstance.py:301} INFO - Bash command returned exit code 99. Skipping.
+[2024-11-15T18:18:42.565+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-15T18:18:42.566+0000] {taskinstance.py:352} INFO - Marking task as SKIPPED. dag_id=brew-dag, task_id=nvalido, run_id=scheduled__2024-11-14T07:00:00+00:00, execution_date=20241114T070000, start_date=20241115T181842, end_date=20241115T181842
+[2024-11-15T18:18:42.600+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-15T18:18:42.618+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-15T18:18:42.629+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

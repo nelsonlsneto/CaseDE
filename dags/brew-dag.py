@@ -89,7 +89,6 @@ default_arguments = {
     "retry_delay": datetime.timedelta(minutes=1),
     'email_on_failure': True,
     'email_on_retry': False,
-    'email': 'nelsonlsn@gmail.com',
     "retries": 1
 }
 
@@ -117,7 +116,7 @@ with DAG('brew-dag', default_args=default_arguments, start_date = datetime.datet
 
     nvalido = BashOperator(
         task_id = 'nvalido',
-        bash_command = "echo 'API nao valida'",
+        bash_command = "echo 'API not valid'; exit 1;",
         on_failure_callback = lambda context: failure_email(context)
     )
 
@@ -141,7 +140,7 @@ with DAG('brew-dag', default_args=default_arguments, start_date = datetime.datet
 
     quality_nok = BashOperator(
         task_id = 'quality_nok',
-        bash_command = "echo 'Number of rows not ok'",
+        bash_command = "echo 'Number of rows not ok'; exit 1;",
         on_failure_callback = lambda context: failure_email(context)
     )
 
